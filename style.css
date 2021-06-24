@@ -55,6 +55,7 @@ button:hover{
    left:calc((100vw - 60vh) / 2);
    border-radius: 4%;
   font-size: 0px;
+  position: relative;
 }
 .col{
     display: inline-block;
@@ -136,8 +137,9 @@ position: absolute;
 #l6{
     z-index: -1;
     font-size: 14vh;
-   transform: rotateZ(90deg) translate(19.5vh, -28.5vh); 
+   transform: rotateZ(90deg) translate(21vh, -30.5vh);
    position: absolute;
+   
    letter-spacing: -1.5vh;
 }
 #l7{
@@ -177,6 +179,10 @@ position: absolute;
     #l1,#l2,#l3,#l4,#l5,#l6,#l7,#l8{
         font-size: 14vw;
         letter-spacing: -1.5vw;
-  
+        
     }
+    #l6{
+       transform: rotateZ(90deg) translate(21vw, -30.5vw); 
+    }
+    
 }
