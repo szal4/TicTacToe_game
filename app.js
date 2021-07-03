@@ -135,94 +135,101 @@ function check_win(){
     }
 }
 function computer_move(){
-    if(grid[0][0]==0 && ((grid[0][1]==2 && grid[0][2]==2) || (grid[1][1]==2 && grid[2][2]==2) || (grid[1][0]==2 && grid[2][0]==2)) ){
+    var radw=Math.floor((Math.random() * 10) + 1); //1-10
+    radw=radw%5 //0-4
+    var radd=Math.floor((Math.random() * 10) + 1); //1-10
+    radd=radd%5 //0-4
+    //////////////////
+    //console.log(radw,radd);
+    /////////////////
+    if(radw!=4 && grid[0][0]==0 && ((grid[0][1]==2 && grid[0][2]==2) || (grid[1][1]==2 && grid[2][2]==2) || (grid[1][0]==2 && grid[2][0]==2)) ){
         box[0].innerHTML="0";
         box[0].style.color="red";
         grid[0][0]=2;
     }
-    else if(grid[0][1]==0 && ((grid[0][0]==2 && grid[0][2]==2) || (grid[1][1]==2 && grid[2][1]==2))){
+    else if(radw!=4 && grid[0][1]==0 && ((grid[0][0]==2 && grid[0][2]==2) || (grid[1][1]==2 && grid[2][1]==2))){
         box[1].innerHTML="0";
         box[1].style.color="red";
         grid[0][1]=2;
     }
-    else if(grid[0][2]==0 && ((grid[0][0]==2 && grid[0][1]==2) || (grid[1][2]==2 && grid[2][2]==2) || (grid[1][1]==2 && grid[2][0]==2)) ){
+    else if(radw!=4 && grid[0][2]==0 && ((grid[0][0]==2 && grid[0][1]==2) || (grid[1][2]==2 && grid[2][2]==2) || (grid[1][1]==2 && grid[2][0]==2)) ){
         box[2].innerHTML="0";
         box[2].style.color="red";
         grid[0][2]=2;
     }
-    else if(grid[1][0]==0 && ((grid[0][0]==2 && grid[2][0]==2) || (grid[1][1]==2 && grid[1][2]==2))){
+    else if(radw!=4 && grid[1][0]==0 && ((grid[0][0]==2 && grid[2][0]==2) || (grid[1][1]==2 && grid[1][2]==2))){
         box[3].innerHTML="0";
         box[3].style.color="red";
         grid[1][0]=2;
     }
-    else if(grid[1][1]==0 && ((grid[0][0]==2 && grid[2][2]==2) || (grid[0][2]==2 && grid[2][0]==2) || (grid[1][0]==2 && grid[1][2]==2) || (grid[0][1]==2 && grid[2][1]==2)) ){
+    else if(radw!=4 && grid[1][1]==0 && ((grid[0][0]==2 && grid[2][2]==2) || (grid[0][2]==2 && grid[2][0]==2) || (grid[1][0]==2 && grid[1][2]==2) || (grid[0][1]==2 && grid[2][1]==2)) ){
         box[4].innerHTML="0";
         box[4].style.color="red";
         grid[1][1]=2;
     }
-    else if(grid[1][2]==0 && ((grid[1][0]==2 && grid[1][1]==2) || (grid[0][2]==2 && grid[2][2]==2))){
+    else if(radw!=4 && grid[1][2]==0 && ((grid[1][0]==2 && grid[1][1]==2) || (grid[0][2]==2 && grid[2][2]==2))){
         box[5].innerHTML="0";
         box[5].style.color="red";
         grid[1][2]=2;
     }
-    else if(grid[2][0]==0 && ((grid[0][0]==2 && grid[1][0]==2) || (grid[1][1]==2 && grid[0][2]==2) || (grid[2][1]==2 && grid[2][2]==2)) ){
+    else if(radw!=4 && grid[2][0]==0 && ((grid[0][0]==2 && grid[1][0]==2) || (grid[1][1]==2 && grid[0][2]==2) || (grid[2][1]==2 && grid[2][2]==2)) ){
         box[6].innerHTML="0";
         box[6].style.color="red";
         grid[2][0]=2;
     }
-    else if(grid[2][1]==0 && ((grid[2][0]==2 && grid[2][2]==2) || (grid[1][1]==2 && grid[0][1]==2))){
+    else if(radw!=4 && grid[2][1]==0 && ((grid[2][0]==2 && grid[2][2]==2) || (grid[1][1]==2 && grid[0][1]==2))){
         box[7].innerHTML="0";
         box[7].style.color="red";
         grid[2][1]=2;
     }
-    else if(grid[2][2]==0 && ((grid[2][0]==2 && grid[2][1]==2) || (grid[0][2]==2 && grid[1][2]==2) || (grid[1][1]==2 && grid[0][0]==2)) ){
+    else if(radw!=4 && grid[2][2]==0 && ((grid[2][0]==2 && grid[2][1]==2) || (grid[0][2]==2 && grid[1][2]==2) || (grid[1][1]==2 && grid[0][0]==2)) ){
         box[8].innerHTML="0";
         box[8].style.color="red";
         grid[2][2]=2;
     }
     //stoping player to win
     else{
-         if(grid[0][0]==0 && ((grid[0][1]==1 && grid[0][2]==1) || (grid[1][1]==1 && grid[2][2]==1) || (grid[1][0]==1 && grid[2][0]==1)) ){
+         if(radd!=4 && grid[0][0]==0 && ((grid[0][1]==1 && grid[0][2]==1) || (grid[1][1]==1 && grid[2][2]==1) || (grid[1][0]==1 && grid[2][0]==1)) ){
         box[0].innerHTML="0";
         box[0].style.color="red";
         grid[0][0]=2;
     }
-    else if(grid[0][1]==0 && ((grid[0][0]==1 && grid[0][2]==1) || (grid[1][1]==1 && grid[2][1]==1))){
+    else if(radd!=4 && grid[0][1]==0 && ((grid[0][0]==1 && grid[0][2]==1) || (grid[1][1]==1 && grid[2][1]==1))){
         box[1].innerHTML="0";
         box[1].style.color="red";
         grid[0][1]=2;
     }
-    else if(grid[0][2]==0 && ((grid[0][0]==1 && grid[0][1]==1) || (grid[1][2]==1 && grid[2][2]==1) || (grid[1][1]==1 && grid[2][0]==1)) ){
+    else if(radd!=4 && grid[0][2]==0 && ((grid[0][0]==1 && grid[0][1]==1) || (grid[1][2]==1 && grid[2][2]==1) || (grid[1][1]==1 && grid[2][0]==1)) ){
         box[2].innerHTML="0";
         box[2].style.color="red";
         grid[0][2]=2;
     }
-    else if(grid[1][0]==0 && ((grid[0][0]==1 && grid[2][0]==1) || (grid[1][1]==1 && grid[1][2]==1))){
+    else if(radd!=4 && grid[1][0]==0 && ((grid[0][0]==1 && grid[2][0]==1) || (grid[1][1]==1 && grid[1][2]==1))){
         box[3].innerHTML="0";
         box[3].style.color="red";
         grid[1][0]=2;
     }
-    else if(grid[1][1]==0 && ((grid[0][0]==1 && grid[2][2]==1) || (grid[0][2]==1 && grid[2][0]==1) || (grid[1][0]==1 && grid[1][2]==1) || (grid[0][1]==1 && grid[2][1]==1)) ){
+    else if(radd!=4 && grid[1][1]==0 && ((grid[0][0]==1 && grid[2][2]==1) || (grid[0][2]==1 && grid[2][0]==1) || (grid[1][0]==1 && grid[1][2]==1) || (grid[0][1]==1 && grid[2][1]==1)) ){
         box[4].innerHTML="0";
         box[4].style.color="red";
         grid[1][1]=2;
     }
-    else if(grid[1][2]==0 && ((grid[1][0]==1 && grid[1][1]==1) || (grid[0][2]==1 && grid[2][2]==1))){
+    else if(radd!=4 && grid[1][2]==0 && ((grid[1][0]==1 && grid[1][1]==1) || (grid[0][2]==1 && grid[2][2]==1))){
         box[5].innerHTML="0";
         box[5].style.color="red";
         grid[1][2]=2;
     }
-    else if(grid[2][0]==0 && ((grid[0][0]==1 && grid[1][0]==1) || (grid[1][1]==1 && grid[0][2]==1) || (grid[2][1]==1 && grid[2][2]==1)) ){
+    else if(radd!=4 && grid[2][0]==0 && ((grid[0][0]==1 && grid[1][0]==1) || (grid[1][1]==1 && grid[0][2]==1) || (grid[2][1]==1 && grid[2][2]==1)) ){
         box[6].innerHTML="0";
         box[6].style.color="red";
         grid[2][0]=2;
     }
-    else if(grid[2][1]==0 && ((grid[2][0]==1 && grid[2][2]==1) || (grid[1][1]==1 && grid[0][1]==1))){
+    else if(radd!=4 && grid[2][1]==0 && ((grid[2][0]==1 && grid[2][2]==1) || (grid[1][1]==1 && grid[0][1]==1))){
         box[7].innerHTML="0";
         box[7].style.color="red";
         grid[2][1]=2;
     }
-    else if(grid[2][2]==0 && ((grid[2][0]==1 && grid[2][1]==1) || (grid[0][2]==1 && grid[1][2]==1) || (grid[1][1]==1 && grid[0][0]==1)) ){
+    else if(radd!=4 && grid[2][2]==0 && ((grid[2][0]==1 && grid[2][1]==1) || (grid[0][2]==1 && grid[1][2]==1) || (grid[1][1]==1 && grid[0][0]==1)) ){
         box[8].innerHTML="0";
         box[8].style.color="red";
         grid[2][2]=2;
@@ -238,8 +245,11 @@ function computer_move(){
             }
           }
         if(ct!=0){
-        var rad=Math.floor((Math.random() * 10) + 1);
+        var rad=Math.floor((Math.random() * 10) + 1);//1-10
         rad=rad%ct;
+        ////////////
+        //console.log(rad);
+        //////////
          for(let i=0;i<3;i++){
             for(let j=0;j<3;j++){
                 if(grid[i][j]==0){
